@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de Vélos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alasql@4"></script>
+    <script src="init_db.js"></script>
+    <script src="config_app.js"></script>
+    <script src="config_queries.js"></script>
+    <script src="config_pages.js"></script>
+    <script src="app_engine.js"></script>
+</head>
+<body>
+    <aside></aside> <main class="container">
+        <section class="hero-banner">
+            <h1>🚲 Système de gestion VeloSystem</h1>
+            <p>Bienvenue sur votre plateforme d'administration de flotte.</p>
+        </section>
+
+        <div class="grid">
+            <article>
+                <h3>🔧 Maintenance</h3>
+                <p>Gérez l'état des vélos et suivez les interventions.</p>
+                <a href="panne_liste.html">Voir les pannes</a>
+            </article>
+            <article>
+                <h3>👤 Clients</h3>
+                <p>Accès rapide à l'annuaire client et leurs abonnements.</p>
+                <a href="clients_liste.html">Voir les clients</a>
+            </article>
+            <article>
+                <h3>📊 Analyse</h3>
+                <p>Vue d'ensemble des données et statistiques.</p>
+                <a href="dashboard.html">Accéder au Dashboard</a>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        // Initialisation de la base de données
+        window.onload = () => {
+            connectDB();
+            // Charge le menu de gauche automatiquement
+            renderSidebar();
+        };
+    </script>
+</body>
+</html>
